@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://chjhcqolcr6mg"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_rn40x"]
+[ext_resource type="Texture2D" uid="uid://dexuqqje805ga" path="res://textures/Map_of_MOBA.svg.png" id="2_dxo36"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s8g4l"]
+albedo_color = Color(0.450648, 0.450648, 0.450648, 1)
+albedo_texture = ExtResource("2_dxo36")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4peka"]
+material = SubResource("StandardMaterial3D_s8g4l")
+size = Vector2(150, 150)
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_rn40x")
+
+[node name="testCamera" type="Camera3D" parent="."]
+transform = Transform3D(-0.978648, 0.0524975, -0.198727, 0.0013924, 0.968505, 0.248992, 0.20554, 0.243398, -0.947898, -4.76158, 7.32765, -13.0349)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_4peka")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.0104019, 0.91639, -0.400151, 4.49317e-17, 0.400173, 0.91644, 0.999946, 0.00953275, -0.00416258, 0, 14.751, 0)
+light_energy = 6.18
