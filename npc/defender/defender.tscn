@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5ef7714l7pox"]
+
+[ext_resource type="Script" path="res://npc/defender/defender.gd" id="1_myi0d"]
+[ext_resource type="Script" path="res://npc/defender/CharacterBody3D.gd" id="2_o01sj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ah5ka"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_bwm53"]
+
+[node name="Defender" type="Node3D"]
+script = ExtResource("1_myi0d")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+disable_mode = 2
+script = ExtResource("2_o01sj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2.08165e-12)
+shape = SubResource("CapsuleShape3D_ah5ka")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00105667, 1, 0.00452518)
+mesh = SubResource("CapsuleMesh_bwm53")
